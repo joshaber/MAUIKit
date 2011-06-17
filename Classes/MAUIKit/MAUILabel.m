@@ -19,7 +19,6 @@
 #pragma mark MAUIView
 
 - (void)drawRect:(CGRect)rect {
-	NSLog(@"%@", [NSThread callStackSymbols]);
 	[self.text drawInRect:NSRectFromCGRect(self.bounds) withAttributes:[self currentAttributes]];
 }
 
@@ -29,7 +28,7 @@
 @synthesize text;
 
 - (NSDictionary *)currentAttributes {
-	return [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:@"Helvetica Neue Light" size:14.0f], NSFontAttributeName, nil];
+	return [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:@"Lucida Grande" size:14.0f], NSFontAttributeName, nil];
 }
 
 @end
