@@ -4,6 +4,8 @@ It was my start at making a modern, gloriously layer-based Mac UI framework. Som
 ## 'Was'?
 Twitter announced last week that they're going to open source TwUI, their modern, gloriously layer-based Mac UI framework which drives Twitter for Mac. This is fantastic news and I'm 100% sure it will kick MAUIKit's ass.
 
+If TwUI is open to contributions when it's out, I look forward to contributing to its awesomeness.
+
 ## Is it full-featured?
 Nope. Nowhere near. This was basically me testing out some ideas.
 
