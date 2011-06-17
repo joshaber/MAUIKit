@@ -10,7 +10,6 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* MAUIKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* MAUIKitAppDelegate.m */; };
 		8846807112F01C8800265D5E /* MAUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8846807012F01C8800265D5E /* MAUILabel.m */; };
-		88C2B88913286307004C7333 /* NSColor+MAUIKitExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C2B88813286307004C7333 /* NSColor+MAUIKitExtensions.m */; };
 		88F4E0EE12E557F8002D5D67 /* MAUIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F4E0ED12E557F8002D5D67 /* MAUIResponder.m */; };
 		88F4E10212E558CC002D5D67 /* MAUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F4E10112E558CC002D5D67 /* MAUIView.m */; };
 		88F4E12712E55B21002D5D67 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F4E12612E55B21002D5D67 /* QuartzCore.framework */; };
@@ -33,8 +32,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8846806F12F01C8800265D5E /* MAUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUILabel.h; sourceTree = "<group>"; };
 		8846807012F01C8800265D5E /* MAUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAUILabel.m; sourceTree = "<group>"; };
-		88C2B88713286307004C7333 /* NSColor+MAUIKitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+MAUIKitExtensions.h"; sourceTree = "<group>"; };
-		88C2B88813286307004C7333 /* NSColor+MAUIKitExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+MAUIKitExtensions.m"; sourceTree = "<group>"; };
 		88F4E0EC12E557F8002D5D67 /* MAUIResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUIResponder.h; sourceTree = "<group>"; };
 		88F4E0ED12E557F8002D5D67 /* MAUIResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAUIResponder.m; sourceTree = "<group>"; };
 		88F4E10012E558CC002D5D67 /* MAUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUIView.h; sourceTree = "<group>"; };
@@ -100,7 +97,6 @@
 		29B97314FDCFA39411CA2CEA /* MAUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				88C2B886132862F9004C7333 /* Categories */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -135,15 +131,6 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		88C2B886132862F9004C7333 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				88C2B88713286307004C7333 /* NSColor+MAUIKitExtensions.h */,
-				88C2B88813286307004C7333 /* NSColor+MAUIKitExtensions.m */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		88F4E0F012E55802002D5D67 /* MAUIKit */ = {
@@ -229,7 +216,6 @@
 				88F4E10212E558CC002D5D67 /* MAUIView.m in Sources */,
 				88FC4DF612EEB34400F9195F /* MAUINSView.m in Sources */,
 				8846807112F01C8800265D5E /* MAUILabel.m in Sources */,
-				88C2B88913286307004C7333 /* NSColor+MAUIKitExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
