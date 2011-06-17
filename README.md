@@ -1,13 +1,13 @@
 # What is this thing?
 It was my start at making a modern, gloriously layer-based Mac UI framework. Something similar to UIKit on iOS.
 
-# 'Was'?
+## 'Was'?
 Twitter announced last week that they're going to open source TwUI, their modern, gloriously layer-based Mac UI framework which drives Twitter for Mac. This is fantastic news and I'm 100% sure it will kick MAUIKit's ass.
 
-# Is it full-featured?
+## Is it full-featured?
 Nope. Nowhere near. This was basically me testing out some ideas.
 
-# So why bother open sourcing it?
+## So why bother open sourcing it?
 Hopefully it will be helpful for someone. I learned a ton in the short time I worked on it.
 
 # Subpixel Anti-Aliasing
