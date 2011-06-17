@@ -41,7 +41,7 @@ typedef enum {
 - (void)setNeedsDisplay;
 
 - (void)layoutSubviews;
-- (void)drawRect:(CGRect)rect;
+- (void)drawRect:(CGRect)dirtyRect;
 
 - (CGPoint)convertPoint:(CGPoint)point fromView:(MAUIView *)view;
 - (CGPoint)convertPoint:(CGPoint)point toView:(MAUIView *)view;

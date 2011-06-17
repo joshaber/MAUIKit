@@ -7,13 +7,12 @@
 //
 
 #import "MAUIView.h"
-#import "NSColor+MAUIKitExtensions.h"
 
 static NSMutableArray *animationStack = nil;
 
 @interface MAUIView ()
 @property (nonatomic, retain) CALayer *layer;
-@property (nonatomic, assign) BOOL manuallyDraw;
+@property (nonatomic, assign) BOOL manuallyDrawingIntoSuperview;
 @end
 
 
@@ -27,7 +26,8 @@ static NSMutableArray *animationStack = nil;
 }
 
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)context {
-	if(self.layer.hidden && !self.manuallyDraw) return;
+	// If a superview is flattening its subviews then those subviews are actually hidden. But we still want to draw if we're compositing the view into its superview.
+	if(self.layer.hidden && !self.manuallyDrawingIntoSuperview) return;
 	
 	[NSGraphicsContext saveGraphicsState];
 	[NSGraphicsContext setCurrentContext:[NSGraphicsContext graphicsContextWithGraphicsPort:context flipped:YES]];
@@ -48,9 +48,9 @@ static NSMutableArray *animationStack = nil;
 			}
 			
 			subview.layer.hidden = YES;
-			subview.manuallyDraw = YES;
+			subview.manuallyDrawingIntoSuperview = YES;
 			[subview.layer drawInContext:cgContext];
-			subview.manuallyDraw = NO;
+			subview.manuallyDrawingIntoSuperview = NO;
 			
 			[NSGraphicsContext restoreGraphicsState];
 		}
@@ -74,8 +74,9 @@ static NSMutableArray *animationStack = nil;
 @synthesize subviews;
 @synthesize superview;
 @synthesize flattenSubviews;
-@synthesize manuallyDraw;
+@synthesize manuallyDrawingIntoSuperview;
 @synthesize userInteractionEnabled;
+@synthesize backgroundColor;
 
 + (void)initialize {
 	if(self == [MAUIView class]) {
@@ -157,16 +158,9 @@ static NSMutableArray *animationStack = nil;
 	
 }
 
-- (void)drawRect:(CGRect)rect {
-	
-}
-
-- (NSColor *)backgroundColor {
-	return [NSColor colorWithCGColor:self.layer.backgroundColor];
-}
-
-- (void)setBackgroundColor:(NSColor *)newColor {
-	self.layer.backgroundColor = newColor.CGColor;
+- (void)drawRect:(CGRect)dirtyRect {
+	[self.backgroundColor set];
+	NSRectFillUsingOperation(dirtyRect, NSCompositeSourceOver);
 }
 
 - (CGFloat)alpha {
